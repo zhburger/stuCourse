@@ -1,0 +1,30 @@
+.icon {
+    font-size: 40px;
+    animation: rotateColor 3s infinite;
+}
+
+@keyframes rotateColor {
+   0%{
+    
+    transform:rotate(0deg) scale(1);
+   }
+   
+   100%{
+    transform:rotate(360deg) scale(1.5);
+   }
+}
+
+
+/* 如果您想要鼠标悬停时才旋转，可以使用这个样式 */
+.icon:hover {
+    animation-play-state: paused;
+    cursor:pointer;
+}
+@media (max-width: 1000px) {
+    .icon {
+        font-size: 100px;
+        
+    }
+
+    
+}
