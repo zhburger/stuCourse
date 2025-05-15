@@ -1,0 +1,39 @@
+body{
+    margin:0;
+    padding:0;
+}
+.layout{
+    width:100vw;
+    height:100vh;
+}
+.header{
+    position:relative;
+}
+.avatar{
+    position:absolute;
+    top:10px;
+    right:8rem;
+}
+.avatar:hover{
+    cursor:pointer;
+}
+.tooltip{
+    display:flex;
+    flex-direction: column;
+}
+.tooltip-button{
+    background-color: #2c3e50;
+    border:none;
+    color:white;
+    padding:5px;
+    border-radius: 3px;
+    transition: all 0.1s ease-in-out;
+}
+.tooltip-button:hover{
+    background-color: #040608;
+    cursor: pointer;
+}
+.tooltip-button:active{
+    opacity: 0.8;
+    background-color: #2c3e50;
+}

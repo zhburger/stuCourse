@@ -1,0 +1,81 @@
+body{
+    margin:0;
+    padding:0;
+}
+.content{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    
+}
+
+.add-course{
+    width:100%;
+    margin-bottom:2rem;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    .submit-btn{
+        margin-left:3rem;
+        padding:0.5rem 2rem;
+        background-color:#3685f3;
+        border:none;
+        border-radius:5px;
+        color:white;
+        transition:all 0.1s ease-in-out;
+    }
+    .submit-btn:hover{
+        background-color:#2e9a40;
+        cursor: pointer;
+    }
+    .submit-btn:active{
+        background-color:#3685f3;
+        opacity:0.8;
+    }
+}
+.course-list{
+    width:100%;
+    border:1px solid black;
+    display:grid;
+    overflow:auto;
+    border-radius:5px;
+    grid-template-columns: 1fr 0.5fr 2fr 0.5fr 0.5fr 1.5fr 100px 100px ;
+    /* 
+    grid-template-columns: 
+    */
+}
+.info{
+    border:1px solid black;
+    padding:4px;
+    font-size:1rem;
+    letter-spacing: 0.1rem;
+}
+.title{
+    background-color: lightblue;
+}
+.edit{
+    background-color:#3685f3;
+    color:white;
+}
+.edit:hover{
+    background-color:#063f8f;
+    cursor: pointer;
+}
+.edit:active{
+    background-color:#3685f3;
+    opacity:0.8;
+}
+.delete{
+    background-color: darkred;
+    color:white;
+}
+.delete:hover{
+    background-color:rgb(91, 2, 2);
+    cursor: pointer;
+}
+.delete:active{
+    background-color:darkred;
+    cursor: pointer;
+    opacity: 0.8;
+}

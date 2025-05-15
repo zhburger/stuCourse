@@ -1,30 +1,122 @@
-.icon {
-    font-size: 40px;
-    animation: rotateColor 3s infinite;
+body{
+    margin:0;
+    padding:0;
 }
 
-@keyframes rotateColor {
-   0%{
-    
-    transform:rotate(0deg) scale(1);
-   }
-   
-   100%{
-    transform:rotate(360deg) scale(1.5);
-   }
-}
-
-
-/* 如果您想要鼠标悬停时才旋转，可以使用这个样式 */
-.icon:hover {
-    animation-play-state: paused;
-    cursor:pointer;
-}
-@media (max-width: 1000px) {
-    .icon {
-        font-size: 100px;
+.container{
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+    background-color: #0d1117;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .login-card{
+        width:21rem;
+        height:24rem;
+        background-color: #151b23;
+        color:white;
+        border:1px solid #3d444db3;
+        transform:translateY(-5rem);
+        border-radius: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:flex-start;
+        .header{
+            margin-top:0.8rem;
+            margin-bottom: 0.9rem;
+            font-size:1.5rem;
+            font-weight: 400;
+            letter-spacing:0.1rem;
+            color:#f0f6fc;
+            text-shadow: 0 0 8px white, 0 0 16px white;
+        }
+        .tabs{
+            display:flex;
+            width:80%;
+            gap: 1rem; 
+            margin-bottom:1rem;
+            .btn{
+                flex:1;
+                color:#3b4a5a;
+                background-color: #151b23;
+                border:none;
+                cursor:pointer;
+                font-size:1rem;
+                padding:5px;
+                border-bottom:2px solid #151b23;
+                transition: all 0.3s ease-in-out;
+            }
+            .btn:hover{
+                text-shadow: 0 0 8px #ce93d8, 0 0 16px #ce93d8;
+                color:#ce93d8;
+                border-bottom:2px solid #ce93d8;
+            }
+            .btn:active{
+                color:black;
+                border-bottom:2px solid black;
+            }
+        }
+        .form-container{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            transform:translateY(1rem);
+        }
+        .content{
+            width:80%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            gap:0.7rem;
+            position:relative;
+           
+            input{
+                color:#f0f6fc;
+                background-color:#0d1117 ;
+                border:1px solid #3d444db3;
+                border-radius:5px;
+                padding:0.3rem;
+                height:1.8rem;
+                margin-bottom:2rem;
+            }
+            input:focus{
+                outline:2px solid #3685f3;
+            }
+            
+        }
+        .label-1{
+            position:absolute;
+            top:-13%;
+            left:10%;
+            font-size:0.9rem;
+            
+        }
+        .label-2{
+            position:absolute;
+            top:27%;
+            left:10%;
+            font-size:0.9rem;
+            
+        }
+        .submit-btn{
+            background-color:#238636;
+            border:none;
+            color:white;
+            padding:0.6rem;
+            font-size:1rem;
+            border-radius:8px;
+            transition: background-color 0.1s ease-in-out;
+            transform:translateY(-1rem);
+        }
+        .submit-btn:hover{
+            background-color:#2e9a40;
+            cursor: pointer;
+        
+        }
         
     }
-
-    
 }
