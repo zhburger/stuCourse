@@ -110,14 +110,18 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
                         options={options} 
                         defaultValue={options[formData.courseType]} />
                    </div>
-                   <div className="input">
+                   {/* <div className="input">
                     <InputNumber  placeholder="课程号" size="large"
                         style={{width: '100%'}}
                         onChange={(value)=>{setFormData({...formData,id:value})}}
                         variant="borderless"
                         defaultValue={formData.id}
                         />
-                    </div>
+                    </div> */}
+                    <div className="info"
+                    style={{
+                      backgroundColor:index%2==0?'#ccc':'#f0f0f0'
+                    }}>{course.id}</div>
                     <div className="input">
                   <Input  placeholder="课程名称" size="large"
                     onChange={(e)=>{

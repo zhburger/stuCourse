@@ -18,7 +18,7 @@ export default function Course() {
     const [courseName,setCourseName]=useState("");
     const [courseType,setCourseType]=useState(0);
     const [credits,setCredits]=useState("");
-    const [id,setId]=useState("");
+    const [id,setId]=useState(0);
     const [preRequisiteCourseIds,setPreRequisiteCourseIds]=useState([]);
     const [totalHours,setTotalHours]=useState("");
     const [preCourseTxt, setPreCourseTxt] = useState("");
@@ -222,13 +222,12 @@ export default function Course() {
                     value={courseType?options[courseType]:options[0]}
                     style={{width: '15%'}}
                     options={options} defaultValue={options[0]} />
-                  <InputNumber placeholder="课程号" size="large"
+                  {/* <InputNumber placeholder="课程号" size="large"
                     style={{width: '15%'}}
                     onChange={(value)=>{setId(value)}} 
-                    value={id}/>
+                    value={id}/> */}
                   <Input placeholder="课程名称" size="large"
                     onChange={(e)=>{setCourseName(e.target.value)}}
-                    
                     style={{width: '50%'}} />
                   <InputNumber placeholder="学分" size="large"
                     onChange={(value)=>{setCredits(value)}}
