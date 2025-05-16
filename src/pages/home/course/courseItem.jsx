@@ -48,9 +48,13 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
       ];
     const handleEdit = async() => {
         console.log(parsePrerequisites(preCourseTxt))
-        setFormData({...course, prerequisites:parsePrerequisites(preCourseTxt)});
-        onUpdate?.(formData,token);
-        setIsEditing(false);
+        const updatedData = {
+          ...course, 
+          preRequisiteCourseIds: parsePrerequisites(preCourseTxt)
+      };
+      setFormData(updatedData);
+      onUpdate?.(updatedData, token); 
+      setIsEditing(false);
     }
     const handleDelete = async() => {
         onDelete?.(formData.id,token);
@@ -145,7 +149,7 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
                   <Input  placeholder="先修课程（请用逗号分隔）" size="large"
                     onChange={(e)=>{
                         setPreCourseTxt(e.target.value)
-                        
+                        console.log(e.target.value)
                     }}
                     defaultValue={formData.preRequisiteCourseIds}
                     variant="borderless"
@@ -178,7 +182,7 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
               <div className="info"
               style={{
                 backgroundColor:index%2==0?'#ccc':'#f0f0f0'
-              }}>{course.preRequisiteCourseIds}</div>
+              }}>{course.preRequisiteCourseIds.join(",")}</div>
               <button  className="info edit" onClick={() => {setIsEditing(true)}}>修改</button>
               <button  className="info delete" onClick={()=>{handleDelete()}}>删除</button>
             </>

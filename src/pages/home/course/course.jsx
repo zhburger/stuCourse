@@ -16,7 +16,7 @@ export default function Course() {
     const [courseList,setCourseList]=useState([]);
     const [course,setCourse]=useState({});
     const [courseName,setCourseName]=useState("");
-    const [courseType,setCourseType]=useState("");
+    const [courseType,setCourseType]=useState(0);
     const [credits,setCredits]=useState("");
     const [id,setId]=useState("");
     const [preRequisiteCourseIds,setPreRequisiteCourseIds]=useState([]);
@@ -138,7 +138,7 @@ export default function Course() {
         getAllCourses(userid,token);
       }else{
         getAllCourses(userid,token);
-        alert("修改失败");
+        alert("修改失败"+response.msg);
       }
     }catch(error){
       console.log(error);
@@ -150,12 +150,11 @@ export default function Course() {
       const response = await deleteCourse(id,token);
       if(response.code==1){
         // 再次获取课程列表
-        
         alert("成功删除课程:"+id)
         getAllCourses(userid,token);
       }else{
         
-        alert("删除课程失败")
+        alert("删除课程失败:"+response.msg)
       }
 
     }catch(error){
@@ -182,8 +181,9 @@ export default function Course() {
     try{
       //先格式化处理先修课程
       setPreRequisiteCourseIds(parsePrerequisites(preCourseTxt))
+      const preCourseIds=parsePrerequisites(preCourseTxt)
       // 发请求
-      const response = await addCourse(courseName,courseType,credits,id,preRequisiteCourseIds,totalHours,token);
+      const response = await addCourse(courseName,courseType,credits,id,preCourseIds,totalHours,token);
       
       if(response.code==1){
         alert("添加课程成功")
@@ -241,7 +241,7 @@ export default function Course() {
                   <Input placeholder="先修课程（请用逗号分隔）" size="large"
                     onChange={(e)=>
                       {setPreCourseTxt(e.target.value)
-                        
+                        console.log(preCourseTxt)
                       }}
                     
                     style={{width: '40%'}}/>
