@@ -49,7 +49,7 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
     const handleEdit = async() => {
         console.log(parsePrerequisites(preCourseTxt))
         const updatedData = {
-          ...course, 
+          ...formData, 
           preRequisiteCourseIds: parsePrerequisites(preCourseTxt)
       };
       setFormData(updatedData);
@@ -60,7 +60,7 @@ export default function CourseItem({ index,course, onUpdate, onDelete }) {
         onDelete?.(formData.id,token);
     }
     const handleCancel = () => {
-        clear();
+        
         setIsEditing(false);
     }
     const clear=()=>{

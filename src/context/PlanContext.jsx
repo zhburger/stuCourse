@@ -30,12 +30,16 @@ export function PlanProvider({ children }) {
             setDataSource(response.data.allSemesters);
             setData1(creditsOfCommonElectiveCourses);
             setData2(creditsOfProfessionalElectiveCourses);
-            maxCourses = dataSource.length > 0 ? getMaxCourses(dataSource) : 0;
             alert("提交成功")
+            maxCourses = dataSource.length > 0 ? getMaxCourses(dataSource) : 0;
             
+           
+          }
+          else{
+            alert("提交失败:"+response.msg)
           }
       }catch(error){
-        alert("生成失败："+response.msg)
+        console.log(error)
       }
     }
   // 提供给子组件的值

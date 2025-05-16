@@ -94,7 +94,7 @@ export default function Plan() {
 
           <div className="plan-item"> 公共基础课学分 </div>
           {dataSource.length > 0 ? dataSource.map((item,index)=>{
-            return <div id={index} className="plan-item" >{data1}</div>
+            return <div id={index} className="plan-item" >{item.publicBaseCourseCredits}</div>
           }) : 
             Array.from({length:8}).map((index)=>{
               return <div id={index} className="plan-item" ></div>
@@ -103,7 +103,7 @@ export default function Plan() {
 
           <div className="plan-item"> 专业基础课学分 </div>
           {dataSource.length > 0 ? dataSource.map((item,index)=>{
-            return <div id={index} className="plan-item" >{data2}</div>
+            return <div id={index} className="plan-item" >{item.majorBaseCourseCredits}</div>
           }) : 
             Array.from({length:8}).map((index)=>{
               return <div id={index} className="plan-item" ></div>
