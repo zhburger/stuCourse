@@ -19,7 +19,7 @@ export function PlanProvider({ children }) {
     };
   
     // 获取最大课程数
-    const maxCourses = dataSource.length > 0 ? getMaxCourses(dataSource) : 0;
+    let maxCourses = dataSource.length > 0 ? getMaxCourses(dataSource) : 0;
     
     //生成培养计划并获取
    
@@ -30,10 +30,8 @@ export function PlanProvider({ children }) {
             setDataSource(response.data.allSemesters);
             setData1(creditsOfCommonElectiveCourses);
             setData2(creditsOfProfessionalElectiveCourses);
+            maxCourses = getMaxCourses(response.data.allSemesters);
             alert("提交成功")
-            maxCourses = dataSource.length > 0 ? getMaxCourses(dataSource) : 0;
-            
-           
           }
           else{
             alert("提交失败:"+response.msg)
